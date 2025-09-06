@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* --- Custom CSS imported from original <style> --- */
+
+body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .font-lexend {
+            font-family: 'Lexend', sans-serif;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #e2e8f0; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+        
+        .nav-link {
+            color: white;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-link:hover {
+            background-color: #004a7c;
+        }
+        .nav-link.active {
+            background-color: #0060a1;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .nav-link.active svg {
+            color: white;
+        }
+        .page { display: none; }
+        .page.active { display: block; animation: fadeIn 0.5s ease-in-out; }
+        
+        .modal-backdrop { background-color: rgba(0, 0, 0, 0.5); }
+        
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            border-width: 1px;
+            border-color: #f1f5f9;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            padding: 1.5rem;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #4f46e5;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .search-dropdown-item:hover {
+            background-color: #f1f5f9;
+        }

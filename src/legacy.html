@@ -1,0 +1,97 @@
+<div id="login-page" class="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 via-white to-white p-4">
+        <div class="w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-xl border border-slate-200">
+            <div class="flex justify-center">
+                <img id="login-logo" src="https://gudang.frecagroup.id/logofreca.png" alt="Logo Perusahaan" class="h-16 mb-4 object-contain" onerror="this.src='https://placehold.co/128x80/e0e0e0/333?text=Logo'">
+            </div>
+            <h1 id="login-title" class="text-3xl font-bold text-center text-slate-800">Data Gudang Login</h1>
+            
+            <form id="login-form" class="space-y-6">
+                <div>
+                    <label for="email" class="text-sm font-medium text-slate-700">Email</label>
+                    <input type="email" id="email" required class="w-full px-4 py-3 mt-2 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                </div>
+                <div class="relative">
+                    <label for="password" class="text-sm font-medium text-slate-700">Password</label>
+                    <input type="password" id="password" required class="w-full px-4 py-3 mt-2 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                    <span class="absolute inset-y-0 right-0 top-7 flex items-center pr-3 cursor-pointer password-toggle">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </span>
+                </div>
+                <button type="submit" id="login-btn" class="w-full py-3 font-semibold text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40">Login</button>
+                <p class="text-center text-sm text-slate-600">
+                    Belum punya akun? <a href="#" id="show-register-form" class="font-medium text-indigo-600 hover:underline">Buat akun baru</a>
+                </p>
+            </form>
+            
+            <form id="register-form" class="hidden space-y-6">
+                <div>
+                    <label for="register-email" class="text-sm font-medium text-slate-700">Email</label>
+                    <input type="email" id="register-email" required class="w-full px-4 py-3 mt-2 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                </div>
+                <div class="relative">
+                    <label for="register-password" class="text-sm font-medium text-slate-700">Password</label>
+                    <input type="password" id="register-password" required class="w-full px-4 py-3 mt-2 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
+                    <span class="absolute inset-y-0 right-0 top-7 flex items-center pr-3 cursor-pointer password-toggle">
+                       <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                    </span>
+                </div>
+                <button type="submit" class="w-full py-3 font-semibold text-white bg-green-600 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors">Daftar</button>
+                <p class="text-center text-sm text-slate-600">
+                    Sudah punya akun? <a href="#" id="show-login-form" class="font-medium text-indigo-600 hover:underline">Login di sini</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <div id="app-container" class="hidden">
+        <div id="sidebar-backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden md:hidden"></div>
+        <div class="relative flex h-screen overflow-hidden">
+            <aside id="sidebar" class="fixed md:relative z-30 w-64 flex-col flex-shrink-0 transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0 md:flex h-screen" style="background-color: #002e4e;">
+                <div class="flex flex-col items-center justify-center h-28 p-8 border-b border-sky-900 mb-4 mt-4">
+                    <img id="sidebar-logo" src="https://gudang.frecagroup.id/logofreca.png" alt="Logo Perusahaan" class="h-16 mb-2 object-contain" onerror="this.src='https://placehold.co/128x64/e0e0e0/333?text=Logo'">
+                    <span id="sidebar-title" class="text-xl font-bold text-white mb-2">Data Gudang</span>
+                </div>
+                <nav id="sidebar-nav" class="flex-1 px-4 py-4 space-y-2"></nav>
+                <div class="px-4 py-4 border-t border-sky-900">
+                    <a href="#" id="logout-btn" class="nav-link flex items-center px-4 py-2 rounded-lg font-medium text-white hover:bg-red-500/80">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                        Logout
+                    </a>
+                </div>
+            </aside>
+            <main class="flex-1 flex flex-col overflow-hidden">
+                <header class="md:hidden flex items-center justify-between p-4 bg-white border-b border-slate-200">
+                    <button id="hamburger-btn" class="p-2 rounded-md text-slate-600 hover:bg-slate-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    <span id="mobile-header-title" class="text-lg font-bold" style="color: #002e4e;">Data Gudang</span>
+                    <div class="w-8"></div>
+                </header>
+                <div class="flex-1 overflow-x-hidden overflow-y-auto p-4 md:p-8">
+                    <div id="main-loader" class="flex flex-col items-center justify-center h-full">
+                        <div class="loader"></div>
+                        <p class="mt-4 text-slate-500">Memuat data...</p>
+                    </div>
+                    <div id="main-content" class="container mx-auto hidden">
+                        <section id="page-dashboard" class="page"></section>
+                        <section id="page-kalkulator" class="page"></section>
+                        <section id="page-produksi" class="page"></section>
+                        <section id="page-barang-keluar" class="page"></section>
+                        <section id="page-input" class="page"></section>
+                        <section id="page-input-pengeluaran" class="page"></section>
+                        <section id="page-master" class="page"></section>
+                        <section id="page-laporan" class="page"></section>
+                        <section id="page-admin" class="page"></section>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div id="notification" class="fixed top-5 right-5 text-white py-3 px-5 rounded-lg shadow-xl transform translate-x-full transition-transform duration-300 z-50">
+        <span id="notification-message"></span>
+    </div>
+    <div id="pin-modal" class="fixed inset-0 z-50 items-center justify-center hidden"> <div class="modal-backdrop fixed inset-0"></div> <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-sm mx-auto z-10"> <h3 class="text-lg font-medium text-slate-900 mb-4">Verifikasi PIN</h3> <p class="text-sm text-slate-600 mb-4">Masukkan PIN untuk melanjutkan aksi ini.</p> <form id="pin-form"> <input type="password" id="pin-input" class="w-full px-3 py-2 border border-slate-300 rounded-md shadow-sm" placeholder="Masukkan PIN"> <div class="mt-4 flex justify-end space-x-2"> <button type="button" id="cancel-pin-btn" class="px-4 py-2 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300">Batal</button> <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Otorisasi</button> </div> </form> </div> </div>
+    <div id="edit-modal" class="fixed inset-0 z-50 items-center justify-center hidden overflow-y-auto"> <div class="modal-backdrop fixed inset-0"></div> <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg mx-auto z-10 my-8"> <h3 id="edit-modal-title" class="text-xl font-bold text-slate-900 mb-4">Edit Data</h3> <form id="edit-modal-form" class="space-y-4"></form> </div> </div>
+    <div id="production-confirm-modal" class="fixed inset-0 z-50 items-center justify-center hidden"> <div class="modal-backdrop fixed inset-0"></div> <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-lg mx-auto z-10"> <h3 class="text-xl font-bold text-slate-900 mb-4">Konfirmasi Produksi</h3> <p id="production-confirm-text" class="text-sm text-slate-600 mb-4"></p> <div id="production-confirm-materials" class="max-h-48 overflow-y-auto border rounded-lg p-3 space-y-2 mb-4"></div> <div class="mt-6 flex justify-end space-x-3"> <button type="button" id="cancel-production-btn" class="px-4 py-2 bg-slate-600 text-white rounded-md hover:bg-slate-700">Batal</button> <button type="button" id="confirm-production-btn" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">Lanjut Produksi</button> </div> </div> </div>
+    <div id="add-rm-modal" class="fixed inset-0 z-50 items-center justify-center hidden"> <div class="modal-backdrop fixed inset-0"></div> <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md mx-auto z-10"> <h3 class="text-lg font-medium text-slate-900 mb-4">Daftarkan Bahan Baku Baru</h3> <form id="add-rm-modal-form" class="space-y-4"> <div><label for="new-rm-name-modal" class="block text-sm font-medium">Nama Bahan Baku</label><input type="text" id="new-rm-name-modal" required class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md"></div> <div><label for="new-rm-unit-modal" class="block text-sm font-medium">Satuan</label><select id="new-rm-unit-modal" required class="units-dropdown mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md bg-white"></select></div> <div class="mt-4 flex justify-end space-x-2"> <button type="button" class="cancel-add-modal-btn px-4 py-2 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300">Batal</button> <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Daftarkan</button> </div> </form> </div> </div>
+    <div id="add-fg-modal" class="fixed inset-0 z-50 items-center justify-center hidden"> <div class="modal-backdrop fixed inset-0"></div> <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md mx-auto z-10"> <h3 class="text-lg font-medium text-slate-900 mb-4">Daftarkan Barang Jadi Baru</h3> <form id="add-fg-modal-form" class="space-y-4"><div><label for="new-fg-brand-modal" class="block text-sm font-medium">Pilih Brand</label><select id="new-fg-brand-modal" required class="brands-dropdown mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md bg-white"></select></div> <div><label for="new-fg-name-modal" class="block text-sm font-medium">Nama Barang Jadi</label><input type="text" id="new-fg-name-modal" required class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md"></div> <div class="mt-4 flex justify-end space-x-2"> <button type="button" class="cancel-add-modal-btn px-4 py-2 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300">Batal</button> <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Daftarkan</button> </div> </form> </div> </div>
+    <div id="add-sm-modal" class="fixed inset-0 z-50 items-center justify-center hidden"> <div class="modal-backdrop fixed inset-0"></div> <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md mx-auto z-10"> <h3 class="text-lg font-medium text-slate-900 mb-4">Daftarkan Bahan Pelengkap Baru</h3> <form id="add-sm-modal-form" class="space-y-4"> <div><label for="new-sm-name-modal" class="block text-sm font-medium">Nama Bahan Pelengkap</label><input type="text" id="new-sm-name-modal" required class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md"></div> <div><label for="new-sm-unit-modal" class="block text-sm font-medium">Satuan</label><input type="text" id="new-sm-unit-modal" required class="mt-1 block w-full px-3 py-2 border border-slate-300 rounded-md"></div> <div class="mt-4 flex justify-end space-x-2"> <button type="button" class="cancel-add-modal-btn px-4 py-2 bg-slate-200 text-slate-800 rounded-md hover:bg-slate-300">Batal</button> <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Daftarkan</button> </div> </form> </div> </div>
